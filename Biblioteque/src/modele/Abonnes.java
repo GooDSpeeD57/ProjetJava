@@ -1,5 +1,6 @@
 package modele;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,10 +9,10 @@ public class Abonnes extends Personne {
     private String dateinscription;
     private static List<Abonnes> abonnes=new ArrayList<>();
 
-    public Abonnes(String nom, String prenom, String mail, String dateinscription){
+    public Abonnes(String nom, String prenom, String mail){
         super(nom,prenom);
         this.mail=mail;
-        this.dateinscription=dateinscription;
+        this.dateinscription= LocalDate.now().toString();
     }
 public static List<Abonnes> getAbonnes(){
         return abonnes;

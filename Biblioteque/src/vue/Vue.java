@@ -44,22 +44,40 @@ public class Vue {
         System.out.println("╚════════════════════════════════════════╝");
     }
 
-    public static String captureutilisateur(String texte, String coderor) {
-
-        String capture = "";
-        String REGEX = "^\\p{L}+$";
-        boolean erreur = true;
-
-        do {
-            System.out.println(texte);
-            capture = sc.nextLine().trim().toLowerCase();
-            if (!capture.matches(REGEX)) {
-                System.err.println(coderor);
-            } else {
-                erreur = false;
-            }
-        }
-        while (erreur) ;
-        return capture;
-    }
+//    public static String captureutilisateur(String texte, String coderor) {
+//
+//        String capture = "";
+//        String REGEX = "^\\p{L}+$";
+//        boolean erreur = true;
+//
+//        do {
+//            System.out.println(texte);
+//            capture = sc.nextLine().trim().toLowerCase();
+//            if (!capture.matches(REGEX)) {
+//                System.err.println(coderor);
+//            } else {
+//                erreur = false;
+//            }
+//        }
+//        while (erreur) ;
+//        return capture;
+//    }
+//    public static String captureMail(String texte, String coderor) {
+//
+//        String capture = "";
+//        String REGEX = "^((?!\\.)[\\w\\-_.]*[^.])(@\\w+)(\\.\\w+(\\.\\w+)?[^.\\W])$";
+//        boolean erreur = true;
+//
+//        do {
+//            System.out.println(texte);
+//            capture = sc.nextLine().trim().toLowerCase();
+//            if (!capture.matches(REGEX)) {
+//                System.err.println(coderor);
+//            } else {
+//                erreur = false;
+//            }
+//        }
+//        while (erreur) ;
+//        return capture;
 }
+
