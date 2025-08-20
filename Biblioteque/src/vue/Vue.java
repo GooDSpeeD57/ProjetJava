@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 
 public class Vue {
-    private static Scanner sc= new Scanner(System.in);
+    private static Scanner sc = new Scanner(System.in);
 
     public static void vueMenu() {
 
@@ -43,41 +43,4 @@ public class Vue {
         System.out.println("║ 0 : quitter                            ║");
         System.out.println("╚════════════════════════════════════════╝");
     }
-
-//    public static String captureutilisateur(String texte, String coderor) {
-//
-//        String capture = "";
-//        String REGEX = "^\\p{L}+$";
-//        boolean erreur = true;
-//
-//        do {
-//            System.out.println(texte);
-//            capture = sc.nextLine().trim().toLowerCase();
-//            if (!capture.matches(REGEX)) {
-//                System.err.println(coderor);
-//            } else {
-//                erreur = false;
-//            }
-//        }
-//        while (erreur) ;
-//        return capture;
-//    }
-//    public static String captureMail(String texte, String coderor) {
-//
-//        String capture = "";
-//        String REGEX = "^((?!\\.)[\\w\\-_.]*[^.])(@\\w+)(\\.\\w+(\\.\\w+)?[^.\\W])$";
-//        boolean erreur = true;
-//
-//        do {
-//            System.out.println(texte);
-//            capture = sc.nextLine().trim().toLowerCase();
-//            if (!capture.matches(REGEX)) {
-//                System.err.println(coderor);
-//            } else {
-//                erreur = false;
-//            }
-//        }
-//        while (erreur) ;
-//        return capture;
 }
-
