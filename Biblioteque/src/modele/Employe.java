@@ -21,7 +21,7 @@ public void setIndentifiant(String indentifiant) {
 }
 @Override
 public String toString(){
-        return super.toString()+"indentifiant"+this.indentifiant;
+        return super.toString()+"\nIndentifiant : "+this.indentifiant;
 }
 }
 
