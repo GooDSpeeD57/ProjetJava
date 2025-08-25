@@ -10,23 +10,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-//        for (int i = 0; i < 10; i++) {
-//            System.out.println("tape dans tes mains" + (i));
-//        }
-//        int numberOfTrees = 0;
-//        while (numberOfTrees < 10) {
-//            numberOfTrees++;
-//            System.out.println("j ai planté " + numberOfTrees + " arbres ");
-//        }
-//        System.out.println("Vive la nature");
 
-//        int pushUpGoal = 10;
-//        do {
-//            System.out.println("Push up !"+pushUpGoal);
-//            pushUpGoal -= 1;
-//        }
-//        while (pushUpGoal > 0);
-//        System.out.println("Bonne Année");
         boolean fin = false;
 
         while (!fin) {
@@ -38,8 +22,7 @@ public class Main {
                 case 0:
                     fin = true;
                     System.out.println("Merci et à bientôt");
-                break;
-
+                    break;
                 case 1:
                     Vue.vueCreation();
                     break;

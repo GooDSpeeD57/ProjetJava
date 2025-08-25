@@ -8,7 +8,6 @@ public class Saisie {
     public static int lireEntier() {
         return sc.nextInt();
     }
-
     public static String lireChaine() {
         sc.nextLine();
         return sc.nextLine();

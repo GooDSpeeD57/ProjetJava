@@ -1,10 +1,28 @@
 package vue;
+import modele.Abonnes;
+
 import java.util.Scanner;
 
 
 
 public class Vue {
     private static Scanner sc = new Scanner(System.in);
+
+    private static String nom;
+    private static String prenom;
+    private static String email;
+
+    public static String getNom() {
+        return nom;
+    }
+
+    public static String getPrenom() {
+        return prenom;
+    }
+
+    public static String getEmail() {
+        return email;
+    }
 
     public static void vueMenu() {
 
@@ -42,5 +60,52 @@ public class Vue {
         System.out.println("╠════════════════════════════════════════╣");
         System.out.println("║ 0 : quitter                            ║");
         System.out.println("╚════════════════════════════════════════╝");
+        }
+        public static void vueCreation() {
+
+            System.out.println("Création d'un abonné");
+            nom = saisieUtilisateur("Le nom ?", "Le nom est incorrect ! merci de resaisir");
+            prenom = saisieUtilisateur("Le prenom ?", "Le prenom est incorrect ! merci de resaisir");
+            email = saisieMailUtilisateur("Le mail ?", "Le mail est incorrect ! merci de resaisir");
+            Abonnes Abonnes00 = new Abonnes(nom,prenom,email);
+            Abonnes .getAbonnes().add(Abonnes00);
+    }
+
+
+        private static String saisieUtilisateur(String message, String messageException) {
+
+            String saisie = "";
+            String REGEX = "^\\p{L}+$";
+            boolean erreur = true;
+
+            do {
+                System.out.println(message);
+                saisie = sc.nextLine().trim().toUpperCase();
+                if (!saisie.matches(REGEX)) {
+                    System.err.println(messageException);
+                } else {
+                    erreur = false;
+                }
+            } while (erreur);
+
+            return saisie;
+        }
+        private static String saisieMailUtilisateur(String message, String messageException) {
+
+            String saisie = "";
+            String REGEX = "^((?!\\.)[\\w\\-_.]*[^.])(@\\w+)(\\.\\w+(\\.\\w+)?[^.\\W])$";
+            boolean erreur = true;
+
+            do {
+                System.out.println(message);
+                saisie = sc.nextLine().trim().toUpperCase();
+                if (!saisie.matches(REGEX)) {
+                    System.err.println(messageException);
+                } else {
+                    erreur = false;
+                }
+            } while (erreur);
+
+            return saisie;
     }
 }

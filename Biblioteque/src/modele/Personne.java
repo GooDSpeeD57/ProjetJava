@@ -5,8 +5,8 @@ public class Personne {
     private String prenom;
 
     public Personne(String nom,String prenom){
-        this.nom=(nom);
-        this.prenom=(prenom);
+        this.nom=nom;
+        this.prenom=prenom;
     }
     public String getNom() {
         return this.nom;
@@ -22,6 +22,6 @@ public class Personne {
     }
 public String toString(){
         return "Nom : "+this.nom+"\nPrénom : "+this.prenom;
-}
+        }
 }
 

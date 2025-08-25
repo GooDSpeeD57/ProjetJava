@@ -4,6 +4,7 @@ import modele.Abonnes;
 import modele.Employe;
 import modele.Livre;
 import modele.Livreprete;
+import utilitaires.Saisie;
 import vue.Vue;
 
 import java.util.Scanner;
@@ -28,49 +29,21 @@ public class Main {
         Livre.getLivres().add(livre0);
         Livre livre1 = new Livre(9999999999998l, "Le Seigneur des Anneaux : les deux tours", "J.R.R Tolkien", 5);
         Livre.getLivres().add(livre1);
-
-        Vue.vueMenu();
         Scanner sc = new Scanner(System.in);
+        Boolean fin = false;
 
-        switch (sc.nextInt()) {
+        while (!fin) {
+        Vue.vueMenu();
+        System.out.println("Votre Choix [1 -6] ou [0] pour quitter : ");
+        int selection = Saisie.lireEntier();
+        switch (selection)
+        {
             case 0:
+                fin = true;
                 System.out.println("au revoir");
                 break;
             case 1:
-                boolean erreur = true;
-                sc.nextLine();
-                do {
-                    System.out.println("Le nom ?");
-                    nom = sc.nextLine().trim();
-                    if (!nom.matches(REGEX)) {
-                        System.err.println("Le nom est incorrect ! merci de resaisir");
-                    } else {
-                        erreur = false;
-                    }
-                } while (erreur);
-
-                erreur = true;
-                do {
-                    System.out.println("le prenom ?");
-                    prenom = sc.nextLine().trim();
-                    if (!prenom.matches(REGEX)) {
-                        System.err.println("Le prénom est incorrecte ! merci de resaisir");
-                    } else {
-                        erreur = false;
-                    }
-                } while (erreur);
-
-                erreur = true;
-                do {
-                    System.out.println("le mail ?");
-                    email = sc.nextLine().trim();
-                    if (!email.matches(REGEXMAIL)) {
-                        System.err.println("Le mail comporte une erreurs ! merci de resaisir");
-                    } else {
-                        erreur = false;
-                    }
-                } while (erreur);
-                Abonnes abonnes = new Abonnes(nom, prenom, email);
+                Vue.vueCreation();
                 break;
             case 2:
                 System.out.println("Enregistrer un nouveau livre");
@@ -96,7 +69,11 @@ public class Main {
                     System.out.println(livrepretes);
                 }
                 break;
+            default:
+                System.err.println("! Choix incorrect ! [0-6] !");
+                break;
+                }
+
+            }
         }
-    }
 }
-//veut pas push
