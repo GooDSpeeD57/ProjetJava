@@ -4,16 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Livre {
-    private long isbn;
-    private String nom;
-    private String auteur;
+    private String isbn,titre,auteur;
     private int quantitedisponible;
 
     private static List<Livre> livres = new ArrayList<>();
 
-    public Livre(long isbn,String nom,String auteur,int quantitedisponible){
+    public Livre(String isbn,String titre,String auteur,int quantitedisponible){
         this.isbn = isbn;
-        this.nom = nom;
+        this.titre = titre;
         this.auteur = auteur;
         this.quantitedisponible = quantitedisponible;
     }
@@ -23,17 +21,43 @@ public class Livre {
     public static void setLivres(List<Livre> livres) {
         Livre.livres = livres;
     }
-    public long getIsbn() {
+    public void setLivre(Livre livre){
+        this.livres.add(livre);
+    }
+    public static Livre rechercherParISBN(String isbn) {
+        for (Livre livre : livres) {
+            if (livre.getIsbn().equalsIgnoreCase(isbn)) {
+                return livre;
+            }
+        }
+        return null;
+    }
+    public static Livre rechercherParTitre(String titre) {
+        for (Livre livre : livres) {
+            if (livre.getTitre().toLowerCase().contains(titre.toLowerCase())) {
+                return livre;
+            }
+        }
+        return null;
+    }
+    public static Livre rechercherParAuteur(String auteur) {
+        for (Livre livre : livres) {
+            if (livre.getAuteur().toLowerCase().contains(auteur.toLowerCase())) {
+                    return livre;  }
+        }
+        return null;
+    }
+    public String getIsbn() {
         return isbn;
     }
-    public void setIsbn(long isbn) {
+    public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
-    public String getNom() {
-        return nom;
+    public String getTitre() {
+        return titre;
     }
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setTitre(String titre) {
+        this.titre = this.titre;
     }
     public String getAuteur() {
         return auteur;
@@ -49,7 +73,7 @@ public class Livre {
     }
     @Override
     public String toString() {
-        return this.isbn+"\n"+this.nom+"\n"+this.auteur+"\n"+this.quantitedisponible;
+        return this.isbn+"\n"+this.titre+"\n"+this.auteur+"\n"+this.quantitedisponible;
     }
 }
 

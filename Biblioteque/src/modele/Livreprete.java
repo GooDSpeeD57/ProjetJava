@@ -8,7 +8,7 @@ public class Livreprete extends Livre {
     private int quantiteprete;
     private LocalDate dateSortie;
     private static List<Livreprete> livrepretes=new ArrayList<>();
-    public Livreprete(long isbn,String nom,String auteur,int quantitedisponible) {
+    public Livreprete(String isbn,String nom,String auteur,int quantitedisponible) {
         super(isbn,nom,auteur,quantitedisponible);
         this.quantiteprete=quantiteprete;
         this.dateSortie=LocalDate.now();
