@@ -32,7 +32,7 @@ public class Livre {
         }
         return null;
     }
-    public static Livre rechercherParTitre(String titre) {
+    public static Livre rechercherParTitre(String titre) {//retourne le premier titre et s arrete de suite
         for (Livre livre : livres) {
             if (livre.getTitre().toLowerCase().contains(titre.toLowerCase())) {
                 return livre;
@@ -40,12 +40,21 @@ public class Livre {
         }
         return null;
     }
-    public static Livre rechercherParAuteur(String auteur) {
+//    public static Livre rechercherParAuteur(String auteur) {
+//        for (Livre livre : livres) {
+//            if (livre.getAuteur().toLowerCase().contains(auteur.toLowerCase())) {
+//                    return livre;  }
+//        }
+//        return null;
+//    }
+    public static List<Livre> rechercherParAuteur(String auteur) {
+        List<Livre> resultats = new ArrayList<>();
         for (Livre livre : livres) {
             if (livre.getAuteur().toLowerCase().contains(auteur.toLowerCase())) {
-                    return livre;  }
+                resultats.add(livre);
+            }
         }
-        return null;
+        return resultats;
     }
     public String getIsbn() {
         return isbn;

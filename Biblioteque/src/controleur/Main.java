@@ -7,6 +7,7 @@ import modele.Livreprete;
 import utilitaires.Saisie;
 import vue.Vue;
 
+import java.util.List;
 import java.util.Scanner;
 
 //import static vue.Vue.captureutilisateur;
@@ -93,16 +94,30 @@ public class Main {
                                         }
                                         break;
                                     case 3:
-                                        System.out.println("Recherche par Auteur");
-                                        String auteurRecherche = Vue.saisieAuteur("Auteur:", "10 ou 13 chiffres");
-                                        Livre livreTrouve2 = Livre.rechercherParAuteur(auteurRecherche);
+                                        System.out.println("Entrez le nom de l'auteur : ");
+                                        String nomAuteur = Saisie.lireChaine();
+                                        List<Livre> livresTrouves = Livre.rechercherParAuteur(nomAuteur);
 
-                                        if (livreTrouve2 != null) {
-                                            System.out.println("Livre trouvé :\n" + livreTrouve2);
+                                        if (livresTrouves.isEmpty()) {
+                                            System.out.println("Aucun livre trouvé pour cet auteur.");
                                         } else {
-                                            System.out.println("Aucun livre trouvé avec cet auteur.");
+                                            System.out.println("Livres trouvés pour l'auteur \"" + nomAuteur + "\" :");
+                                            for (Livre l : livresTrouves) {
+                                                System.out.println("-------------------------");
+                                                System.out.println(l);
+                                            }
                                         }
                                         break;
+//                                        System.out.println("Recherche par Auteur");
+//                                        String auteurRecherche = Vue.saisieAuteur("Auteur:", "10 ou 13 chiffres");
+//                                        Livre livreTrouve2 = Livre.rechercherParAuteur(auteurRecherche);
+//
+//                                        if (livreTrouve2 != null) {
+//                                            System.out.println("Livre trouvé :\n" + livreTrouve2);
+//                                        } else {
+//                                            System.out.println("Aucun livre trouvé avec cet auteur.");
+//                                        }
+//                                        break;
                                     default:
                                         System.err.println("choix entre 1.3");
                                 }
