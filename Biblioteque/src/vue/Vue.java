@@ -1,31 +1,14 @@
 package vue;
 import modele.Abonnes;
 import modele.Livre;
-
-import java.util.ArrayList;
-import java.util.List;
+import utilitaires.Saisie;
 import java.util.Scanner;
-
-
 
 public class Vue {
     private static Scanner sc = new Scanner(System.in);
 
     private static String nom, prenom, email, isbn, titre, auteur;
     private static int quantitedisponible;
-
-
-    public static String getNom() {
-        return nom;
-    }
-
-    public static String getPrenom() {
-        return prenom;
-    }
-
-    public static String getEmail() {
-        return email;
-    }
 
     public static void vueMenu() {
 
@@ -63,7 +46,7 @@ public class Vue {
         System.out.println("╠════════════════════════════════════════╣");
         System.out.println("║ 6 : Afficher la liste des prêts        ║");
         System.out.println("╠════════════════════════════════════════╣");
-        System.out.println("║ 0 : quitter                            ║");
+        System.out.println("║ 0 : Quitter                            ║");
         System.out.println("╚════════════════════════════════════════╝");
     }
     public static void vueMenuLivre() {
@@ -74,13 +57,11 @@ public class Vue {
         System.out.println("╠════════════════════════════════════════╣");
         System.out.println("║ 2 : Recherche Abonnées                 ║");
         System.out.println("╠════════════════════════════════════════╣");
-        System.out.println("║ 3 : Identifiant                        ║");
+        System.out.println("║ 3 : Cree un pret                       ║");
         System.out.println("╠════════════════════════════════════════╣");
-        System.out.println("║ 4 : Cree un pret                       ║");
+        System.out.println("║ 4 : Afficher la liste des prêts        ║");
         System.out.println("╠════════════════════════════════════════╣");
-        System.out.println("║ 5 : Afficher la liste des prêts        ║");
-        System.out.println("╠════════════════════════════════════════╣");
-        System.out.println("║ 0 : Quitter                            ║");
+        System.out.println("║ 0 : Retour Menu Principal              ║");
         System.out.println("╚════════════════════════════════════════╝");
     }
     public static void vueMenuRechLivre() {
@@ -93,7 +74,7 @@ public class Vue {
         System.out.println("╠════════════════════════════════════════╣");
         System.out.println("║ 3 : Par Auteur                         ║");
         System.out.println("╠════════════════════════════════════════╣");
-        System.out.println("║ 0 : Quitter                            ║");
+        System.out.println("║ 0 : Retour Menu  Précedent             ║");
         System.out.println("╚════════════════════════════════════════╝");
     }
     public static void vueMenuAbonne() {
@@ -105,7 +86,7 @@ public class Vue {
         System.out.println("╠════════════════════════════════════════╣");
         System.out.println("║ 2 : Par Email                          ║");
         System.out.println("╠════════════════════════════════════════╣");
-        System.out.println("║ 0 : Quitter                            ║");
+        System.out.println("║ 0 : Retour Menu Précedent              ║");
         System.out.println("╚════════════════════════════════════════╝");
     }
     public static void vueCreation() {
@@ -124,7 +105,7 @@ public class Vue {
         isbn = saisieISBN("ISBN 10 ou 13 chiffre", "ISBN est incorrect ! merci de resaisir");
         titre = saisieAuteur("Le Titre ?", "Le Titre est incorrect ! merci de resaisir");
         auteur = saisieAuteur("Auteur ?", "L'auteur est incorrect ! merci de resaisir");
-        quantitedisponible = saisiequantite("Quantité", "la valeur ne peut pas etre négative");
+        quantitedisponible = Saisie.lireEntier("Quantité", "la valeur ne peut pas etre négative");
         Livre Livre00 = new Livre(isbn, titre, auteur, quantitedisponible);
         Livre.getLivres().add(Livre00);
 
@@ -149,7 +130,7 @@ public class Vue {
         return saisie;
     }
 
-    private static String saisieMailUtilisateur(String message, String messageException) {
+    public static String saisieMailUtilisateur(String message, String messageException) {
 
         String saisie = "";
         String REGEX = "^((?!\\.)[\\w\\-_.]*[^.])(@\\w+)(\\.\\w+(\\.\\w+)?[^.\\W])$";
@@ -168,23 +149,6 @@ public class Vue {
         return saisie;
     }
 
-    private static int saisiequantite(String message, String messageException) {
-
-        int saisie;
-        boolean erreur = true;
-
-        do {
-            System.out.println(message);
-            saisie = sc.nextInt();
-            if (saisie < 0) {
-                System.err.println(messageException);
-            } else {
-                erreur = false;
-            }
-        } while (erreur);
-
-        return saisie;
-    }
 
     public static String saisieISBN(String message, String messageException) {
 

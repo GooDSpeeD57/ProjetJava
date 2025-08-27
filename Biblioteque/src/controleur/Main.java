@@ -17,26 +17,23 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Abonnes Abonnes00 = new Abonnes("Temiro", "Chantal", "Temiro.Chantal@yahoo.fr");
-        Abonnes.getAbonnes().add(Abonnes00);
-        Abonnes Abonnes01 = new Abonnes("Kull", "Jean", "Jean.Kull@lesmouches.fr");
-        Abonnes.getAbonnes().add(Abonnes01);
-        Employe Simone = new Employe("Vielle", "Simone", "1245421");
-        Employe Gilbert = new Employe("Montagné", "Gilbert", "1010101");
-        Livre livre0 = new Livre("9782267046885", "Le Seigneur des Anneaux : La Communauté de l'Anneau", "J.R.R Tolkien", 5);
-        Livre.getLivres().add(livre0);
-        Livre livre1 = new Livre("9782267046892", "Le Seigneur des Anneaux : Les Deux Tours", "J.R.R Tolkien", 5);
-        Livre.getLivres().add(livre1);
-        Livre livre2 = new Livre("9782267046908","Le Seigneur des Anneaux : Le Retour du Roi","J.R.R Tolkien", 5);
-        Livre.getLivres().add(livre2);
+        Abonnes abonnes00 = new Abonnes("Temiro", "Chantal", "Temiro.Chantal@yahoo.fr");
+        Abonnes.getAbonnes().add(abonnes00);
+        Abonnes abonnes01 = new Abonnes("Kull", "Jean", "Jean.Kull@lesmouches.fr");
+        Abonnes.getAbonnes().add(abonnes01);
+        Employe employe00 = new Employe("Vielle", "Simone", "1245421");
+        Employe employe01 = new Employe("Montagné", "Gilbert", "1010101");
+        Livre livre00 = new Livre("9782267046885", "Le Seigneur des Anneaux : La Communauté de l'Anneau", "J.R.R Tolkien", 5);
+        Livre livre01 = new Livre("9782267046892", "Le Seigneur des Anneaux : Les Deux Tours", "J.R.R Tolkien", 5);
+        Livre livre02 = new Livre("9782267046908","Le Seigneur des Anneaux : Le Retour du Roi","J.R.R Tolkien", 5);
+
         Scanner sc = new Scanner(System.in);
         Boolean fin = false;
 
         while (!fin) {
         Vue.vueMenu();
         Vue.vueMenuglobal();
-        System.out.println("Votre Choix [1 -6] ou [0] pour quitter : ");
-        int selection = Saisie.lireEntier();
+        int selection = Saisie.lireEntier("Votre Choix [1 -6] ou [0] pour quitter : ","un nombre positif");
         switch (selection)
         {
             case 0:
@@ -54,8 +51,7 @@ public class Main {
                 while (!fin1) {
                     Vue.vueMenu();
                     Vue.vueMenuLivre();
-                    System.out.println("Votre Choix [1 -5] ou [0] pour retourner au menu principal : ");
-                    int selection1 = Saisie.lireEntier();
+                    int selection1 = Saisie.lireEntier("Votre Choix [1 -5] ou [0] pour retourner au menu principal : ","Un nombre");
                     switch (selection1){
                         case 0:
                             fin1 = true;
@@ -65,8 +61,7 @@ public class Main {
                             while (!fin2) {
                                 Vue.vueMenu();
                                 Vue.vueMenuRechLivre();
-                                System.out.println("Votre Choix [1 -3] ou [0] pour quitter : ");
-                                int selection2 = Saisie.lireEntier();
+                                int selection2 = Saisie.lireEntier("Votre Choix [1 -3] ou [0] pour quitter : ","un NOMBRE!!!!");
                                 switch (selection2) {
                                     case 0:
                                         fin2 = true;
@@ -83,41 +78,35 @@ public class Main {
                                         }
                                         break;
                                     case 2:
-                                        System.out.println("Recherche par Titre");
-                                        String  titrerecherche= Vue.saisieAuteur("Titres ? :", "Pas despace avant et apres");
-                                        Livre livreTrouve1 = Livre.rechercherParTitre(titrerecherche);
-
-                                        if (livreTrouve1 != null) {
-                                            System.out.println("Livre trouvé :\n" + livreTrouve1);
-                                        } else {
-                                            System.out.println("Aucun livre trouvé avec ce titre.");
-                                        }
-                                        break;
-                                    case 3:
-                                        System.out.println("Entrez le nom de l'auteur : ");
-                                        String nomAuteur = Saisie.lireChaine();
-                                        List<Livre> livresTrouves = Livre.rechercherParAuteur(nomAuteur);
+                                        System.out.println("Recherche par Titre : ");
+                                        String nomTitre = Vue.saisieAuteur("Titre ?","Pas d'espace avant et apres ");
+                                        List<Livre> livresTrouves = Livre.rechercherParTitre(nomTitre);
 
                                         if (livresTrouves.isEmpty()) {
-                                            System.out.println("Aucun livre trouvé pour cet auteur.");
+                                            System.out.println("Aucun livre trouvé pour ce Titre.");
                                         } else {
-                                            System.out.println("Livres trouvés pour l'auteur \"" + nomAuteur + "\" :");
+                                            System.out.println("Livres trouvés pour le titre \"" + nomTitre + "\"");
                                             for (Livre l : livresTrouves) {
                                                 System.out.println("-------------------------");
                                                 System.out.println(l);
                                             }
                                         }
                                         break;
-//                                        System.out.println("Recherche par Auteur");
-//                                        String auteurRecherche = Vue.saisieAuteur("Auteur:", "10 ou 13 chiffres");
-//                                        Livre livreTrouve2 = Livre.rechercherParAuteur(auteurRecherche);
-//
-//                                        if (livreTrouve2 != null) {
-//                                            System.out.println("Livre trouvé :\n" + livreTrouve2);
-//                                        } else {
-//                                            System.out.println("Aucun livre trouvé avec cet auteur.");
-//                                        }
-//                                        break;
+                                    case 3:
+                                        System.out.println("Recherche par Auteur : ");
+                                        String nomAuteur = Vue.saisieAuteur("Auteur ?","Pas d'espace avant et apres ");
+                                        List<Livre> livresTrouves1 = Livre.rechercherParAuteur(nomAuteur);
+
+                                        if (livresTrouves1.isEmpty()) {
+                                            System.out.println("Aucun livre trouvé pour cet auteur.");
+                                        } else {
+                                            System.out.println("Livres trouvés pour l'auteur \"" + nomAuteur + "\" :");
+                                            for (Livre l : livresTrouves1) {
+                                                System.out.println("-------------------------");
+                                                System.out.println(l);
+                                            }
+                                        }
+                                        break;
                                     default:
                                         System.err.println("choix entre 1.3");
                                 }
@@ -128,20 +117,41 @@ public class Main {
                             while (!fin3) {
                                 Vue.vueMenu();
                                 Vue.vueMenuAbonne();
-                                System.out.println("Votre Choix [1 -2] ou [0] pour quitter : ");
-                                int selection3 = Saisie.lireEntier();
+                                int selection3 = Saisie.lireEntier("Votre Choix [1 -2] ou [0] pour quitter : ","un nombre entre 0 et 3");
                                 switch (selection3) {
                                     case 0:
                                         fin3 = true;
                                         break;
                                     case 1:
-                                        System.out.println("Nom");
+                                        String nom = Vue.saisieAuteur("Recherche par Nom ?","Pas d'espace avant et apres ");
+                                        List<Abonnes> nomTrouve = Abonnes.rechercherNom(nom);
+
+                                        if (nomTrouve.isEmpty()) {
+                                            System.out.println("Aucun Nom trouvé pour : "+nom+ " Veuillez l'inscire.");
+                                        } else {
+                                            System.out.println("Nom  \"" + nom + "\" :");
+                                            for (Abonnes l : nomTrouve ) {
+                                                System.out.println("-------------------------");
+                                                System.out.println(l);
+                                            }
+                                        }
                                         break;
                                     case 2:
-                                        System.out.println("Mail");
+                                        String mail = Vue.saisieMailUtilisateur("Recherche par Email ?","Pas d'espace avant et apres ");
+                                        List<Abonnes> rechercheMail = Abonnes.rechercherEmail(mail);
+
+                                        if (rechercheMail.isEmpty()) {
+                                            System.out.println("Aucun Email trouvé pour : "+mail+ " Veuillez l'inscire.");
+                                        } else {
+                                            System.out.println("Email ?  \"" + mail + "\" :");
+                                            for (Abonnes l : rechercheMail ) {
+                                                System.out.println("-------------------------");
+                                                System.out.println(l);
+                                            }
+                                        }
                                         break;
                                     default:
-                                        System.err.println("choix entre 1.5");
+                                        System.err.println("choix entre 1.2");
                                 }
                             }
                             break;
@@ -173,9 +183,12 @@ public class Main {
                 break;
             case 6:
                 System.out.println("afficher la liste des prets");
-                for (Livreprete livrepretes : Livreprete.getLivrepretes()) {
-                    System.out.println(livrepretes);
-                }
+                Livreprete pret1 = new Livreprete(livre01,abonnes00,employe00);
+
+                for (Livreprete pret : Livreprete.getPretes()) {
+
+                    System.out.println(pret);
+                    }
                 break;
             default:
                 System.err.println("! Choix incorrect ! [0-6] !");

@@ -14,16 +14,9 @@ public class Livre {
         this.titre = titre;
         this.auteur = auteur;
         this.quantitedisponible = quantitedisponible;
+        livres.add(this);
     }
-    public static List<Livre> getLivres() {
-        return livres;
-    }
-    public static void setLivres(List<Livre> livres) {
-        Livre.livres = livres;
-    }
-    public void setLivre(Livre livre){
-        this.livres.add(livre);
-    }
+
     public static Livre rechercherParISBN(String isbn) {
         for (Livre livre : livres) {
             if (livre.getIsbn().equalsIgnoreCase(isbn)) {
@@ -32,25 +25,19 @@ public class Livre {
         }
         return null;
     }
-    public static Livre rechercherParTitre(String titre) {//retourne le premier titre et s arrete de suite
-        for (Livre livre : livres) {
-            if (livre.getTitre().toLowerCase().contains(titre.toLowerCase())) {
-                return livre;
+    public static List<Livre> rechercherParTitre(String auteur) {
+        List<Livre> resultats = new ArrayList<>();
+            for (Livre livre : livres) {
+                if (livre.getTitre().toLowerCase().contains(auteur.toLowerCase())) {
+                resultats.add(livre);
             }
         }
-        return null;
+        return resultats;
     }
-//    public static Livre rechercherParAuteur(String auteur) {
-//        for (Livre livre : livres) {
-//            if (livre.getAuteur().toLowerCase().contains(auteur.toLowerCase())) {
-//                    return livre;  }
-//        }
-//        return null;
-//    }
     public static List<Livre> rechercherParAuteur(String auteur) {
         List<Livre> resultats = new ArrayList<>();
-        for (Livre livre : livres) {
-            if (livre.getAuteur().toLowerCase().contains(auteur.toLowerCase())) {
+            for (Livre livre : livres) {
+                if (livre.getAuteur().toLowerCase().contains(auteur.toLowerCase())) {
                 resultats.add(livre);
             }
         }
@@ -60,6 +47,9 @@ public class Livre {
         return isbn;
     }
     public void setIsbn(String isbn) {
+        if (isbn == null || !isbn.matches("^(?:\\d{10}|\\d{13})$")) {
+            throw new IllegalArgumentException("L'ISBN doit contenir exactement 10 ou 13 chiffres.");
+        }
         this.isbn = isbn;
     }
     public String getTitre() {
@@ -79,6 +69,13 @@ public class Livre {
     }
     public void setQuantitedisponible(int quantitedisponible) {
         this.quantitedisponible = quantitedisponible;
+    }
+    public static List<Livre> getLivres() {
+        return livres;
+    }
+    public static void setLivres(List<Livre> livres) {
+        Livre.livres = livres;
+
     }
     @Override
     public String toString() {

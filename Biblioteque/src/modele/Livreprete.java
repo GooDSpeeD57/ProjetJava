@@ -1,32 +1,53 @@
 package modele;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Livreprete extends Livre {
-    private int quantiteprete;
-    private LocalDate dateSortie;
-    private static List<Livreprete> livrepretes=new ArrayList<>();
-    public Livreprete(String isbn,String nom,String auteur,int quantitedisponible) {
-        super(isbn,nom,auteur,quantitedisponible);
-        this.quantiteprete=quantiteprete;
-        this.dateSortie=LocalDate.now();
+public class Livreprete {
+    private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    private static List<Livreprete>pretes = new ArrayList<>();
+
+    private Abonnes abonnes;
+    private Livre livre;
+    private Employe employe;
+    private LocalDate datePret;
+    private LocalDate dateRetour;
+
+    public Livreprete(Livre livre,Abonnes abonnes,Employe employe ) {
+        this.livre = livre;
+        this.abonnes = abonnes;
+        this.employe = employe;
+        this.datePret = LocalDate.now();
+        this.dateRetour = datePret.plusDays(7);
+        pretes.add(this);
     }
-    public static List<Livreprete> getLivrepretes() {
-        return livrepretes;
+   public Abonnes getAbonnes() {
+        return abonnes;
+   }
+   public Livre getLivre() {
+        return livre;
+   }
+   public Employe getEmploye() {
+        return employe;
+   }
+   public String getDatePret() {
+        return datePret.format(formatter);
+   }
+    public String getDateRetour() {
+        return dateRetour.format(formatter);
     }
-    public int getQuantiteprete() {
-        return quantiteprete;
+
+    public static List<Livreprete> getPretes() {
+        return  new ArrayList<>(pretes);
     }
-    public void setQuantiteprete(int quantiteprete) {
-        this.quantiteprete = quantiteprete;
-    }
-    public LocalDate getDateSortie() {
-        return dateSortie;
-    }
-    @Override
+
     public String toString() {
-        return super.toString()+"livreprete"+this.quantiteprete;
+        return "Livre : "+livre.getIsbn()+" Titre : "+livre.getTitre()
+                +"\nAbonnes Nom : "+abonnes.getNom()+"prénom"+abonnes.getPrenom()
+                +"\nEmploye Identifiant :"+employe.getIndentifiant()
+                +"\nDate d empreint : "+getDatePret()+" Date de Retour :"+getDateRetour();
     }
 }
+
