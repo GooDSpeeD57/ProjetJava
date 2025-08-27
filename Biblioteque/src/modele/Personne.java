@@ -1,12 +1,13 @@
 package modele;
+import exception.SaisieException;
 
 public class Personne {
     private String nom;
     private String prenom;
 
     public Personne(String nom,String prenom){
-        this.nom=nom;
-        this.prenom=prenom;
+        this.setNom(nom);
+        this.setPrenom(prenom);
     }
     public String getNom() {
         return this.nom;
@@ -15,10 +16,18 @@ public class Personne {
         return this.prenom;
     }
     public void setNom(String nom) {
-    this.nom = nom;
+        if (nom == null ||nom.trim().length() < 3 || !nom.matches("^\\p{L}+$")) {
+            throw new IllegalArgumentException("Erreur dans le nom ! Merci de corriger");
+        } else {
+            this.nom = nom;
+        }
     }
     public void setPrenom(String prenom) {
-        this.prenom = prenom;
+        if (prenom == null ||prenom.trim().length() < 3 || !prenom.matches("^\\p{L}+$")) {
+            throw new IllegalArgumentException("Erreur dans le prenom ! Merci de corriger");
+        } else {
+            this.prenom = prenom;
+        }
     }
 public String toString(){
         return "Nom : "+this.nom+"\nPrénom : "+this.prenom;

@@ -10,10 +10,10 @@ public class Livre {
     private static List<Livre> livres = new ArrayList<>();
 
     public Livre(String isbn,String titre,String auteur,int quantitedisponible){
-        this.isbn = isbn;
-        this.titre = titre;
-        this.auteur = auteur;
-        this.quantitedisponible = quantitedisponible;
+        this.setIsbn(isbn);
+        this.setTitre(titre);
+        this.setAuteur(auteur);
+        this.setQuantitedisponible(quantitedisponible);
         livres.add(this);
     }
 
@@ -56,26 +56,31 @@ public class Livre {
         return titre;
     }
     public void setTitre(String titre) {
+        if (titre == null || titre.trim().isEmpty() || !titre.matches("^(?! )[A-Za-zÀ-ÖØ-öø-ÿ0-9'’\"():;!?.,\\- ]+(?<! )$")) {
+            throw new IllegalArgumentException("Pas d espace avant ou apres.");
+        }
         this.titre = this.titre;
     }
     public String getAuteur() {
         return auteur;
     }
     public void setAuteur(String auteur) {
+        if (auteur == null || auteur.trim().isEmpty() || !auteur.matches("^(?! )[A-Za-zÀ-ÖØ-öø-ÿ0-9'’\"():;!?.,\\- ]+(?<! )$")) {
+            throw new IllegalArgumentException("Pas d espace avant ou apres.");
+        }
         this.auteur = auteur;
     }
     public int getQuantitedisponible() {
-        return quantitedisponible;
+               return quantitedisponible;
     }
     public void setQuantitedisponible(int quantitedisponible) {
+        if (quantitedisponible < 0 ) {
+            throw new IllegalArgumentException("la quantiré ne peut etre inferieure a 0");
+        }
         this.quantitedisponible = quantitedisponible;
     }
     public static List<Livre> getLivres() {
         return livres;
-    }
-    public static void setLivres(List<Livre> livres) {
-        Livre.livres = livres;
-
     }
     @Override
     public String toString() {
