@@ -18,9 +18,7 @@ public class Main {
 
 
         Abonnes abonnes00 = new Abonnes("Temiro", "Chantal", "Temiro.Chantal@yahoo.fr");
-        Abonnes.getAbonnes().add(abonnes00);
         Abonnes abonnes01 = new Abonnes("Kull", "Jean", "Jean.Kull@lesmouches.fr");
-        Abonnes.getAbonnes().add(abonnes01);
         Employe employe00 = new Employe("Vielle", "Simone", "1245421");
         Employe employe01 = new Employe("Montagné", "Gilbert", "1010101");
         Livre livre00 = new Livre("9782267046885", "Le Seigneur des Anneaux : La Communauté de l'Anneau", "J.R.R Tolkien", 5);

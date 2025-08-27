@@ -25,10 +25,10 @@ public class Livre {
         }
         return null;
     }
-    public static List<Livre> rechercherParTitre(String auteur) {
+    public static List<Livre> rechercherParTitre(String titre) {
         List<Livre> resultats = new ArrayList<>();
             for (Livre livre : livres) {
-                if (livre.getTitre().toLowerCase().contains(auteur.toLowerCase())) {
+                if (livre.getTitre().toLowerCase().contains(titre.toLowerCase())) {
                 resultats.add(livre);
             }
         }
@@ -43,7 +43,8 @@ public class Livre {
         }
         return resultats;
     }
-    public String getIsbn() {
+    public String getIsbn()
+    {
         return isbn;
     }
     public void setIsbn(String isbn) {
@@ -52,20 +53,27 @@ public class Livre {
         }
         this.isbn = isbn;
     }
-    public String getTitre() {
+    public String getTitre()
+    {
         return titre;
     }
     public void setTitre(String titre) {
-        if (titre == null || titre.trim().isEmpty() || !titre.matches("^(?! )[A-Za-zÀ-ÖØ-öø-ÿ0-9'’\"():;!?.,\\- ]+(?<! )$")) {
+        if (titre == null
+                || titre.trim().isEmpty()
+                || !titre.matches("^(?! )[A-Za-zÀ-ÖØ-öø-ÿ0-9'’\"():;!?.,\\- ]+(?<! )$"))
+        {
             throw new IllegalArgumentException("Pas d espace avant ou apres.");
         }
-        this.titre = this.titre;
+        this.titre = titre;
     }
     public String getAuteur() {
         return auteur;
     }
     public void setAuteur(String auteur) {
-        if (auteur == null || auteur.trim().isEmpty() || !auteur.matches("^(?! )[A-Za-zÀ-ÖØ-öø-ÿ0-9'’\"():;!?.,\\- ]+(?<! )$")) {
+        if (auteur == null
+                || auteur.trim().isEmpty()
+                || !auteur.matches("^(?! )[A-Za-zÀ-ÖØ-öø-ÿ0-9'’\"():;!?.,\\- ]+(?<! )$"))
+        {
             throw new IllegalArgumentException("Pas d espace avant ou apres.");
         }
         this.auteur = auteur;
@@ -74,7 +82,8 @@ public class Livre {
                return quantitedisponible;
     }
     public void setQuantitedisponible(int quantitedisponible) {
-        if (quantitedisponible < 0 ) {
+        if (quantitedisponible < 0 )
+        {
             throw new IllegalArgumentException("la quantiré ne peut etre inferieure a 0");
         }
         this.quantitedisponible = quantitedisponible;
@@ -84,7 +93,10 @@ public class Livre {
     }
     @Override
     public String toString() {
-        return this.isbn+"\n"+this.titre+"\n"+this.auteur+"\n"+this.quantitedisponible;
+        return "ISBN : "+this.isbn+
+                "\nTitre : "+this.titre+
+                "\nAuteur : "+this.auteur+
+                "\nQuantité disponible : "+this.quantitedisponible;
     }
 }
 

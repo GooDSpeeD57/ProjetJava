@@ -8,7 +8,8 @@ public class Employe extends Personne{
     private static List<Employe> employees = new ArrayList<>();
     public Employe(String nom, String prenom, String indentifiant) {
         super(nom, prenom);
-        this.indentifiant=indentifiant;
+        this.setIndentifiant(indentifiant);
+        employees.add(this);
     }
 public static List<Employe> getEmployees(){
         return employees;

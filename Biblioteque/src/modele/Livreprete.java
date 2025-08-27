@@ -16,13 +16,21 @@ public class Livreprete {
     private LocalDate dateRetour;
 
     public Livreprete(Livre livre,Abonnes abonnes,Employe employe ) {
-        this.livre = livre;
-        this.abonnes = abonnes;
-        this.employe = employe;
-        this.datePret = LocalDate.now();
-        this.dateRetour = datePret.plusDays(7);
-        pretes.add(this);
-    }
+        if (livre == null || abonnes == null || employe == null) {
+            throw new IllegalArgumentException("Aucun parametre ne peut etre vide");
+        }
+        if (livre.getQuantitedisponible() <= 0) {
+            throw new IllegalArgumentException("Livre indisponnible au pret");
+        }
+            this.livre = livre;
+            this.abonnes = abonnes;
+            this.employe = employe;
+            this.datePret = LocalDate.now();
+            this.dateRetour = datePret.plusDays(7);
+            livre.setQuantitedisponible(livre.getQuantitedisponible() - 1);
+            pretes.add(this);
+        }
+
    public Abonnes getAbonnes() {
         return abonnes;
    }

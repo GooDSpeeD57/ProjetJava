@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f37d3bcf-7e07-4fb2-bfcb-16f3829488fc" name="Changes" comment="ca marche">
+      <changelist_data name="GooDSpeeD57" email="" automatic="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Projet Java Classe.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Biblioteque/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Biblioteque/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Biblioteque/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Biblioteque/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Biblioteque/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Biblioteque/Biblioteque.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Biblioteque/src/controleur/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Biblioteque/src/modele/Abonnes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Biblioteque/src/modele/Employe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Biblioteque/src/modele/Livre.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Biblioteque/src/modele/Livreprete.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Biblioteque/src/modele/Personne.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Biblioteque/src/utilitaires/Saisie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Biblioteque/src/vue/Vue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Capital_Ville/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Capital_Ville/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Capital_Ville/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Capital_Ville/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Capital_Ville/Capital_Ville.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Capital_Ville/src/Capital.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Capital_Ville/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Capital_Ville/src/Ville.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classe/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classe/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classe/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classe/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classe/Classe.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classe/exercice.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classe/src/Compte.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classe/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classe/src/MainRectangle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classe/src/Ordinateur.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classe/src/Rectangle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classe/src/Testcompte.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classe/src/Voiture.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet WOW/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet WOW/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet WOW/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet WOW/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet WOW/Projet WOW.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet WOW/src/controleur/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet WOW/src/modele/Chasseurdedemon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet WOW/src/modele/Druide.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet WOW/src/modele/Guerrier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet WOW/src/modele/Personnage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet WOW/src/vue/VueMMORPG.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WoW/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WoW/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WoW/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WoW/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WoW/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WoW/WoW.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WoW/src/controleur/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WoW/src/modele/Groupe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WoW/src/modele/Guerrier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WoW/src/modele/Personne.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WoW/src/modele/Soigneur.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WoW/src/modele/Voleur.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/Geometry/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/Geometry/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/Geometry/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/Geometry/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/Geometry/Geometry.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/Geometry/src/Geometry/Cercle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/Geometry/src/Geometry/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/Geometry/src/Geometry/Point.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/Hiérarchie/Hiérarchie.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/Hiérarchie/hierarchie/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/Hiérarchie/hierarchie/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/Hiérarchie/hierarchie/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/Hiérarchie/hierarchie/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/Hiérarchie/hierarchie/hierarchie.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/Hiérarchie/hierarchie/src/Etudiant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/Hiérarchie/hierarchie/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/Hiérarchie/hierarchie/src/Personne.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/Hiérarchie/hierarchie/src/Personnel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/livre/Livre/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/livre/Livre/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/livre/Livre/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/livre/Livre/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/livre/Livre/Livre.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/livre/Livre/src/Livre.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/livre/Livre/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/livre/livre.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="GooDSpeeD57" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "GooDSpeeD57"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/GooDSpeeD57/ProjetJava.git",
+    "accountId": "691c4def-6403-49b7-837e-bcd7caf8933e"
+  }
+}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="31WNFaigwRoxh9bwX4KQN7tDHeu" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/GooDSpeeD/Documents/Projet Java Classe&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
+        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-IU-252.23892.409" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f37d3bcf-7e07-4fb2-bfcb-16f3829488fc" name="Changes" comment="" />
+      <created>1755635765548</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1755635765548</updated>
+      <workItem from="1755635767008" duration="2837000" />
+      <workItem from="1755792822417" duration="795000" />
+      <workItem from="1755793707906" duration="502000" />
+      <workItem from="1755949532055" duration="1376000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/Biblioteque" />
+    </ignored-roots>
+    <MESSAGE value="ca marche" />
+    <option name="LAST_COMMIT_MESSAGE" value="ca marche" />
+  </component>
+</project>

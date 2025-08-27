@@ -57,7 +57,7 @@ public class Vue {
         System.out.println("╠════════════════════════════════════════╣");
         System.out.println("║ 2 : Recherche Abonnées                 ║");
         System.out.println("╠════════════════════════════════════════╣");
-        System.out.println("║ 3 : Cree un pret                       ║");
+        System.out.println("║ 3 : Créer un pret                       ║");
         System.out.println("╠════════════════════════════════════════╣");
         System.out.println("║ 4 : Afficher la liste des prêts        ║");
         System.out.println("╠════════════════════════════════════════╣");
@@ -68,13 +68,13 @@ public class Vue {
 
         System.out.println("║         Recherche de Livre             ║");
         System.out.println("╠════════════════════════════════════════╣");
-        System.out.println("║ 1 : Par ISBM  10 ou 13 n°              ║");
+        System.out.println("║ 1 : Par ISBN  10 ou 13 n°              ║");
         System.out.println("╠════════════════════════════════════════╣");
         System.out.println("║ 2 : Par Titre                          ║");
         System.out.println("╠════════════════════════════════════════╣");
         System.out.println("║ 3 : Par Auteur                         ║");
         System.out.println("╠════════════════════════════════════════╣");
-        System.out.println("║ 0 : Retour Menu  Précedent             ║");
+        System.out.println("║ 0 : Retour Menu Précedent              ║");
         System.out.println("╚════════════════════════════════════════╝");
     }
     public static void vueMenuAbonne() {
@@ -95,8 +95,8 @@ public class Vue {
         nom = saisieUtilisateur("Le nom ?", "Le nom est incorrect ! merci de resaisir");
         prenom = saisieUtilisateur("Le prenom ?", "Le prenom est incorrect ! merci de resaisir");
         email = saisieMailUtilisateur("Le mail ?", "Le mail est incorrect ! merci de resaisir");
-        Abonnes Abonnes00 = new Abonnes(nom, prenom, email);
-        Abonnes.getAbonnes().add(Abonnes00);
+        Abonnes nouvelAbonne = new Abonnes(nom, prenom, email);
+        Abonnes.getAbonnes().add(nouvelAbonne);
     }
 
     public static void vueCreaLivre() {
@@ -106,8 +106,8 @@ public class Vue {
         titre = saisieAuteur("Le Titre ?", "Le Titre est incorrect ! merci de resaisir");
         auteur = saisieAuteur("Auteur ?", "L'auteur est incorrect ! merci de resaisir");
         quantitedisponible = Saisie.lireEntier("Quantité", "la valeur ne peut pas etre négative");
-        Livre Livre00 = new Livre(isbn, titre, auteur, quantitedisponible);
-        Livre.getLivres().add(Livre00);
+        Livre nouveauLivre = new Livre(isbn, titre, auteur, quantitedisponible);
+        Livre.getLivres().add(nouveauLivre);
 
     }
 
