@@ -1,29 +1,40 @@
 package controleur;
 
+import exception.SaisieException;
 import modele.Abonnes;
 import modele.Employe;
 import modele.Livre;
 import modele.Livreprete;
+import utilitaires.PersitSerializable;
 import utilitaires.Saisie;
 import vue.Vue;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
-//import static vue.Vue.captureutilisateur;
-
-
 public class Main {
-    public static void main(String[] args) {
+    private static final String FICHIER_PERSISTANCE = "donnees.bin";
+    private static Map<String, Object> donnees;
+    public static void main(String[] args) throws SaisieException {
+        donnees = PersitSerializable.charger(FICHIER_PERSISTANCE);
+        List<Abonnes> abonnes = (List<Abonnes>) donnees.getOrDefault("abonnes", new java.util.ArrayList<>());
+        List<Employe> employes = (List<Employe>) donnees.getOrDefault("employes", new java.util.ArrayList<>());
+        List<Livre> livres = (List<Livre>) donnees.getOrDefault("livres", new java.util.ArrayList<>());
+        List<Livreprete> livrepretes = (List<Livreprete>) donnees.getOrDefault("prets", new java.util.ArrayList<>());
 
+        Abonnes.setAbonnes(abonnes);
+        Employe.setEmployees(employes);
+        Livre.setLivres(livres);
+        Livreprete.setLivrepretes(livrepretes);
 
-        Abonnes abonnes00 = new Abonnes("Temiro", "Chantal", "Temiro.Chantal@yahoo.fr");
-        Abonnes abonnes01 = new Abonnes("Kull", "Jean", "Jean.Kull@lesmouches.fr");
-        Employe employe00 = new Employe("Vielle", "Simone", "1245421");
-        Employe employe01 = new Employe("Montagné", "Gilbert", "1010101");
-        Livre livre00 = new Livre("9782267046885", "Le Seigneur des Anneaux : La Communauté de l'Anneau", "J.R.R Tolkien", 5);
-        Livre livre01 = new Livre("9782267046892", "Le Seigneur des Anneaux : Les Deux Tours", "J.R.R Tolkien", 5);
-        Livre livre02 = new Livre("9782267046908","Le Seigneur des Anneaux : Le Retour du Roi","J.R.R Tolkien", 5);
+//        Abonnes abonnes00 = new Abonnes("Temiro", "Chantal", "Temiro.Chantal@yahoo.fr");
+//        Abonnes abonnes01 = new Abonnes("Kull", "Jean", "Jean.Kull@lesmouches.fr");
+//        Employe employe00 = new Employe("Vielle", "Simone", "1245421");
+//        Employe employe01 = new Employe("Montagné", "Gilbert", "1010101");
+//        Livre livre00 = new Livre("9782267046885", "Le Seigneur des Anneaux : La Communauté de l'Anneau", "J.R.R Tolkien", 5);
+//        Livre livre01 = new Livre("9782267046892", "Le Seigneur des Anneaux : Les Deux Tours", "J.R.R Tolkien", 5);
+//        Livre livre02 = new Livre("9782267046908","Le Seigneur des Anneaux : Le Retour du Roi","J.R.R Tolkien", 5);
 
         Scanner sc = new Scanner(System.in);
         Boolean fin = false;
@@ -36,7 +47,13 @@ public class Main {
         {
             case 0:
                 fin = true;
-                System.out.println("au revoir");
+                System.out.println("Sauvegarde en cours...");
+                donnees.put("abonnes", Abonnes.getAbonnes());
+                donnees.put("employes", Employe.getEmployees());
+                donnees.put("livres", Livre.getLivres());
+                donnees.put("prets", Livreprete.getLivrepretes());
+                PersitSerializable.sauvegarder(donnees, FICHIER_PERSISTANCE);
+                System.out.println("Au revoir !");
                 break;
             case 1:
                 Vue.vueCreation();
@@ -125,7 +142,7 @@ public class Main {
                                         List<Abonnes> nomTrouve = Abonnes.rechercherNom(nom);
 
                                         if (nomTrouve.isEmpty()) {
-                                            System.out.println("Aucun Nom trouvé pour : "+nom+ " Veuillez l'inscire.");
+                                            System.out.println("Aucun Nom trouvé pour : "+nom+ " Veuillez l'inscrire.");
                                         } else {
                                             System.out.println("Nom  \"" + nom + "\" :");
                                             for (Abonnes l : nomTrouve ) {
@@ -170,23 +187,25 @@ public class Main {
             case 4:
                 System.out.println("-----Afficher la liste des abonnés-----\n");
                 for (Abonnes abonne : Abonnes.getAbonnes()) {
+                    System.out.println("-------------------------");
                     System.out.println(abonne);
                 }
                 break;
             case 5:
                 System.out.println("afficher la liste des livres");
                 for (Livre livre : Livre.getLivres()) {
+                    System.out.println("-------------------------");
                     System.out.println(livre);
                 }
                 break;
             case 6:
                 System.out.println("afficher la liste des prets");
-                Livreprete pret1 = new Livreprete(livre01,abonnes00,employe00);
-
-                for (Livreprete pret : Livreprete.getPretes()) {
-
-                    System.out.println(pret);
-                    }
+//                Livreprete pret1 = new Livreprete(livre00,abonnes00,employe00);
+//
+//                for (Livreprete pret : Livreprete.getLivrepretes()) {
+//                    System.out.println("-------------------------");
+//                    System.out.println(pret);
+//                    }
                 break;
             default:
                 System.err.println("! Choix incorrect ! [0-6] !");

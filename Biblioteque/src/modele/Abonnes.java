@@ -37,12 +37,13 @@ public class Abonnes extends Personne {
         return resultats;
     }
 public static List<Abonnes> getAbonnes()
+
 {
         return abonnes;
 }
-public void setAbonnes(List<Abonnes> abonnes)
+public static void setAbonnes(List<Abonnes> abonnes)
 {
-        this.abonnes=abonnes;
+        Abonnes.abonnes=abonnes;
 
 }
 public String getMail()

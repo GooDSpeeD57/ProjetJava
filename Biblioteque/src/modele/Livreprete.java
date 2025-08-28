@@ -1,13 +1,17 @@
 package modele;
 
+import exception.SaisieException;
+
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Livreprete {
+public class Livreprete implements Serializable {
+    private static final long serialVersionUID = 1L;
     private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-    private static List<Livreprete>pretes = new ArrayList<>();
+    private static List<Livreprete>livrepretes = new ArrayList<>();
 
     private Abonnes abonnes;
     private Livre livre;
@@ -15,7 +19,7 @@ public class Livreprete {
     private LocalDate datePret;
     private LocalDate dateRetour;
 
-    public Livreprete(Livre livre,Abonnes abonnes,Employe employe ) {
+    public Livreprete(Livre livre,Abonnes abonnes,Employe employe ) throws SaisieException {
         if (livre == null || abonnes == null || employe == null) {
             throw new IllegalArgumentException("Aucun parametre ne peut etre vide");
         }
@@ -28,27 +32,38 @@ public class Livreprete {
             this.datePret = LocalDate.now();
             this.dateRetour = datePret.plusDays(7);
             livre.setQuantitedisponible(livre.getQuantitedisponible() - 1);
-            pretes.add(this);
+            livrepretes.add(this);
         }
 
-   public Abonnes getAbonnes() {
+   public Abonnes getAbonnes()
+   {
         return abonnes;
    }
-   public Livre getLivre() {
+   public Livre getLivre()
+   {
         return livre;
    }
-   public Employe getEmploye() {
+   public Employe getEmploye()
+   {
         return employe;
    }
-   public String getDatePret() {
+   public String getDatePret()
+   {
         return datePret.format(formatter);
    }
-    public String getDateRetour() {
+    public String getDateRetour()
+    {
         return dateRetour.format(formatter);
     }
 
-    public static List<Livreprete> getPretes() {
-        return  new ArrayList<>(pretes);
+    public static List<Livreprete> getLivrepretes()
+    {
+        return  new ArrayList<>(livrepretes);
+    }
+
+    public static void setLivrepretes(List<Livreprete> livrepretes)
+    {
+        Livreprete.livrepretes = livrepretes;
     }
 
     public String toString() {

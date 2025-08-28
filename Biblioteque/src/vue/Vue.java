@@ -1,4 +1,5 @@
 package vue;
+import exception.SaisieException;
 import modele.Abonnes;
 import modele.Livre;
 import utilitaires.Saisie;
@@ -96,10 +97,10 @@ public class Vue {
         prenom = saisieUtilisateur("Le prenom ?", "Le prenom est incorrect ! merci de resaisir");
         email = saisieMailUtilisateur("Le mail ?", "Le mail est incorrect ! merci de resaisir");
         Abonnes nouvelAbonne = new Abonnes(nom, prenom, email);
-        Abonnes.getAbonnes().add(nouvelAbonne);
+
     }
 
-    public static void vueCreaLivre() {
+    public static void vueCreaLivre() throws SaisieException {
 
         System.out.println("Création d'un livre");
         isbn = saisieISBN("ISBN 10 ou 13 chiffre", "ISBN est incorrect ! merci de resaisir");
@@ -107,7 +108,7 @@ public class Vue {
         auteur = saisieAuteur("Auteur ?", "L'auteur est incorrect ! merci de resaisir");
         quantitedisponible = Saisie.lireEntier("Quantité", "la valeur ne peut pas etre négative");
         Livre nouveauLivre = new Livre(isbn, titre, auteur, quantitedisponible);
-        Livre.getLivres().add(nouveauLivre);
+
 
     }
 

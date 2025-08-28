@@ -14,6 +14,9 @@ public class Employe extends Personne{
 public static List<Employe> getEmployees(){
         return employees;
 }
+public static void setEmployees(List<Employe> employees) {
+        Employe.employees = employees;
+}
 public String getIndentifiant() {
         return indentifiant;
 }
