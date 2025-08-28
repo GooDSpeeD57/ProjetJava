@@ -92,7 +92,7 @@ public class Livre implements Serializable {
     public void setQuantitedisponible(int quantitedisponible) throws SaisieException {
         if (quantitedisponible < 0 )
         {
-            throw new IllegalArgumentException("la quantiré ne peut etre inferieure a 0");
+            throw new IllegalArgumentException("la quantité ne peut etre inferieure a 0");
         }
         this.quantitedisponible = quantitedisponible;
     }

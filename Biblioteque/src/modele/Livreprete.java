@@ -69,7 +69,7 @@ public class Livreprete implements Serializable {
     public String toString() {
         return "Livre : "+livre.getIsbn()+" Titre : "+livre.getTitre()
                 +"\nAbonnes Nom : "+abonnes.getNom()+"prénom"+abonnes.getPrenom()
-                +"\nEmploye Identifiant :"+employe.getIndentifiant()
+                +"\nEmploye Identifiant :"+employe.getIdentifiant()
                 +"\nDate d empreint : "+getDatePret()+" Date de Retour :"+getDateRetour();
     }
 }

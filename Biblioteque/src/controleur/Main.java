@@ -200,12 +200,12 @@ public class Main {
                 break;
             case 6:
                 System.out.println("afficher la liste des prets");
-//                Livreprete pret1 = new Livreprete(livre00,abonnes00,employe00);
-//
-//                for (Livreprete pret : Livreprete.getLivrepretes()) {
-//                    System.out.println("-------------------------");
-//                    System.out.println(pret);
-//                    }
+                Livreprete pret1 = new Livreprete(Livre.getLivres().get(0),Abonnes.getAbonnes().get(0),Employe.getEmployees().get(0));
+
+                for (Livreprete pret : Livreprete.getLivrepretes()) {
+                    System.out.println("-------------------------");
+                    System.out.println(pret);
+                    }
                 break;
             default:
                 System.err.println("! Choix incorrect ! [0-6] !");

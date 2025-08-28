@@ -54,7 +54,7 @@ public void setMail(String mail) {
         if(mail==null||mail.trim().isEmpty()||!mail.matches(REGEXemail)){
             throw  new IllegalArgumentException("L'email non valide");
         }
-        this.mail = mail.trim().toLowerCase();
+        this.mail = mail;
 }
 public String getDateNow()
 {
