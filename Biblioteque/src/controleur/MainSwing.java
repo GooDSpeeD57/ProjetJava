@@ -17,7 +17,7 @@ import modele.*;
 import exception.SaisieException;
 import utilitaires.PersitSerializable;
 
-public class BibliothequeGUI extends JFrame {
+public class MainSwing extends JFrame {
 
     private static final String FICHIER_PERSISTANCE = "donnees.bin";
     private static Map<String, Object> donnees;
@@ -36,7 +36,7 @@ public class BibliothequeGUI extends JFrame {
     private JTextField txtRechercheISBN, txtRechercheTitre, txtRechercheAuteur;
     private JTextField txtRechercheNom, txtRechercheEmail;
 
-    public BibliothequeGUI() {
+    public MainSwing() {
         chargerDonnees();
         initComponents();
         chargerDonneesDansGUI();
@@ -91,13 +91,8 @@ public class BibliothequeGUI extends JFrame {
         add(tabbedPane);
 
         // Style général
-        try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeel());
-            SwingUtilities.updateComponentTreeUI(this);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
+
 
     private void creerMenu() {
         JMenuBar menuBar = new JMenuBar();
@@ -964,12 +959,7 @@ public class BibliothequeGUI extends JFrame {
         initialiserDonneesTest();
 
         SwingUtilities.invokeLater(() -> {
-            try {
-                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeel());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            new BibliothequeGUI().setVisible(true);
+            new MainSwing().setVisible(true);
         });
     }
 
